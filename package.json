@@ -1,0 +1,24 @@
+{
+  "name": "thoughts",
+  "version": "0.0.1",
+  "description": "Not sure what will come out of this",
+  "scripts": {
+    "serve": "static src --port 7777 --spa --cache false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/confususs/thoughts.git"
+  },
+  "keywords": [
+    "home"
+  ],
+  "author": "Ard Timmerman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/confususs/thoughts/issues"
+  },
+  "homepage": "https://github.com/confususs/thoughts#readme",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  }
+}
