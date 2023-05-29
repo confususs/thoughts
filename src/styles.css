@@ -13,6 +13,7 @@
 :link {
   color: var(--link-color);
 }
+
 :visited {
   color: var(--link-visited-color);
 }
@@ -24,15 +25,30 @@ body {
   align-items: center;
   background-color: var(--bg-color);
   color: var(--text-color);
+  margin: 0;
 }
 
-.section-1 {
+main {
   max-width: 1000px;
+  padding: 20px;
 }
 
-/* Component specific stuff */
+/* Component specific styles */
 c-dark-mode-toggle {
   position: fixed;
   top: 10px;
   right: 10px;
+}
+
+c-maze-1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+c-seeded-choice-table-2,
+c-seeded-choice-table-3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

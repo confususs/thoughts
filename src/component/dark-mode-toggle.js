@@ -1,7 +1,5 @@
 class DarkModeToggle extends HTMLElement {
-  constructor() {
-    super();
-
+  connectedCallback() {
     const template = document.createElement("template");
     template.innerHTML = `
       <label class="toggle" for="dark-mode-checkbox">

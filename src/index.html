@@ -2,26 +2,106 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Ard's page</title>
+    <title>Ard's Page</title>
     <link rel="stylesheet" href="/styles.css" />
     <script type="module" src="/component/dark-mode-toggle.js"></script>
+    <script type="module" src="/iteration/1/component/maze.js"></script>
+    <script
+      type="module"
+      src="/iteration/2/component/seeded-choice-table.js"
+    ></script>
+    <script type="module" src="/iteration/2/component/maze.js"></script>
+    <script type="module" src="/iteration/3/component/maze.js"></script>
+    <script
+      type="module"
+      src="/iteration/3/component/seeded-choice-table.js"
+    ></script>
   </head>
   <body>
-    <c-dark-mode-toggle></c-dark-mode-toggle>
-    <div class="section-1">
-      <h1>Ard's experiments</h1>
-      <p>
-        Heya! Welcome on this page. I'm just messing with some ideas right now,
-        while writing down my thought process. Enjoy!
-      </p>
-      <h2>Micromouse</h2>
-      <p>
-        A few days ago I found something about a
-        <a href="https://news.ycombinator.com/item?id=36087330">Micromouse</a>
-        competition which I found really interesting. <br /><br />
-        This is when I started thinking about building something that emulates
-        these mouses. Let's see how this pans out.
-      </p>
-    </div>
+    <header>
+      <c-dark-mode-toggle></c-dark-mode-toggle>
+    </header>
+    <main>
+      <section>
+        <h1>Ard's Experiments</h1>
+        <p>
+          Heya! Welcome to this page. I'm currently exploring various ideas and
+          documenting my thought process. Enjoy!
+        </p>
+      </section>
+      <section>
+        <h2>Micromouse</h2>
+        <p>
+          A few days ago, I came across the
+          <a href="https://news.ycombinator.com/item?id=36087330">Micromouse</a>
+          competition, which sparked my interest. <br /><br />
+          This got me thinking about building something that emulates these
+          robotic mice. Let's see how it turns out.
+        </p>
+      </section>
+      <section>
+        <h2>Mazes</h2>
+        <p>
+          First, we need mazes. I would like to be able to generate them and use
+          a seed to reproduce a previously generated maze.<br /><br />
+
+          Let's start by creating a web component that can generate an "empty
+          maze".
+        </p>
+        <c-maze-1></c-maze-1>
+        <p>
+          Awesome! Now we need to use an algorithm to actually create the maze.
+          There are many of them, but I particularly like the
+          <a
+            href="http://weblog.jamisbuck.org/2011/1/24/maze-generation-hunt-and-kill-algorithm"
+            >hunt and kill algorithm</a
+          >, not only because it sounds cool, but also because it allows us to
+          tweak the random walk algorithm it uses. I like this because in the
+          Micromouse competitions, there are certain patterns in mazes that the
+          maze designers like to use.<br /><br />
+
+          However before we begin, let's first learn how seeds work..
+        </p>
+      </section>
+      <section>
+        <h2>Seeds</h2>
+        <p>
+          Let's imagine a point in the middle of a square. We can open up the
+          square through 4 directions: left, right, up and down. This square can
+          be anywhere in the maze. If a maze has 4x4 squares, the second square
+          in the second row has the identifier '6'. There are 4 choices, so the
+          possible combinations are 6-left, 6-right, 6-up or 6-down.<br /><br />
+
+          Now we need to go from a seed to one of these combinations. Below a
+          simple table to test part of this functionality.
+        </p>
+        <c-seeded-choice-table-2></c-seeded-choice-table-2>
+        <p>
+          Cool! So we got some degree of reproducable "randomness" using a seed.
+        </p>
+      </section>
+      <section>
+        <h2>Testing an Algorithm</h2>
+        <p>
+          I'd like to be able to step through whatever the algorithm is doing,
+          so we can properly implement it. So first, we build something visual
+          that we can use to test an algorithm. Let's adapt the previous maze to
+          be able to differentiate between cells that the algorithm has visited
+          and cells that the algorithm hasn't visited. We'll just use our random
+          function to color roughly half of the cells grey-ish.
+        </p>
+        <c-maze-2 data-algorithm="random" data-seed="BQNO"></c-maze-2>
+        <p>
+          There are clear patterns emerging, which is kind of beautiful really.
+          However one of the things I'm doing to seed the random function is
+          extending the seed with some variables. In this case, the x and y
+          coordinates and the row and column number of the cell. There are
+          probably better ways to generate a seed in combination with these
+          variables.
+        </p>
+        <c-maze-3 data-algorithm="random" data-seed="BQNO"></c-maze-3>
+        <p>Much better already! Good enough for now.</p>
+      </section>
+    </main>
   </body>
 </html>
