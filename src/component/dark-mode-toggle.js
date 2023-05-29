@@ -30,11 +30,15 @@ class DarkModeToggle extends HTMLElement {
     const body = document.querySelector("body");
 
     if (checkbox.checked) {
-      body.style.setProperty("--bg-color", "black");
-      body.style.setProperty("--text-color", "white");
+      body.style.setProperty("--bg-color", "#1e1e20");
+      body.style.setProperty("--text-color", "rgba(255, 255, 245, .86)");
+      body.style.setProperty("--link-color", "#F299FF");
+      body.style.setProperty("--link-visited-color", "#F299FF");
     } else {
       body.style.setProperty("--bg-color", "white");
-      body.style.setProperty("--text-color", "black");
+      body.style.setProperty("--text-color", "rgba(60, 60, 67)");
+      body.style.setProperty("--link-color", "#0000EE");
+      body.style.setProperty("--link-visited-color", "#551A8B");
     }
   }
 }

@@ -3,6 +3,20 @@
   src: url("/fonts/Aller_Rg.ttf") format("truetype");
 }
 
+:root {
+  --bg-color: white;
+  --text-color: rgba(60, 60, 67);
+  --link-color: #0000ee;
+  --link-visited-color: #551a8b;
+}
+
+:link {
+  color: var(--link-color);
+}
+:visited {
+  color: var(--link-visited-color);
+}
+
 body {
   font-family: "Aller Regular";
   display: flex;
