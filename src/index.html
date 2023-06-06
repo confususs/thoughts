@@ -12,6 +12,7 @@
     ></script>
     <script type="module" src="/iteration/2/component/maze.js"></script>
     <script type="module" src="/iteration/3/component/maze.js"></script>
+    <script type="module" src="/iteration/4/component/maze-builder.js"></script>
     <script
       type="module"
       src="/iteration/3/component/seeded-choice-table.js"
@@ -81,7 +82,7 @@
         </p>
       </section>
       <section>
-        <h2>Testing an Algorithm</h2>
+        <h2>Testing a maze-building algorithm</h2>
         <p>
           I'd like to be able to step through whatever the algorithm is doing,
           so we can properly implement it. So first, we build something visual
@@ -101,6 +102,13 @@
         </p>
         <c-maze-3 data-algorithm="random" data-seed="BQNO"></c-maze-3>
         <p>Much better already! Good enough for now.</p>
+
+        <p>
+          First, we'll start with an empty maze, this times with all walls
+          closed and a simple mechanism that opens a random closed wall every
+          second.
+        </p>
+        <c-maze-builder-1 data-seed="YUOE"></c-maze-builder-1>
       </section>
     </main>
   </body>

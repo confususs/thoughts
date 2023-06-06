@@ -40,7 +40,9 @@ c-dark-mode-toggle {
   right: 10px;
 }
 
-c-maze-1 {
+c-maze-1,
+c-maze-2,
+c-maze-3 {
   display: flex;
   justify-content: center;
   margin-top: 20px;
